@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+  <persistence-unit name="petstore">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>TPPet.Product</class>
+    <class>TPPet.PetStore</class>
+    <class>TPPet.Address</class>
+    <class>TPPet.Animal</class>
+    <class>TPPet.Fish</class>
+    <class>TPPet.Cat</class>
+    <class>TPPet.ProdType</class>
+    <class>TPPet.CatChipId</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://bebq5lekwetlsgnvjwkk-mysql.services.clever-cloud.com:3306/bebq5lekwetlsgnvjwkk"/>
+      <property name="javax.persistence.jdbc.user" value="u069cqbka7t1l62q"/>
+      <property name="javax.persistence.jdbc.password" value="xZkyuPO3OXcwUF7fuXJV"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
