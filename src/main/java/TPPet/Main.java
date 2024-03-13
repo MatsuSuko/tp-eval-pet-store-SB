@@ -127,7 +127,7 @@ public class Main {
         address2.getPetStores().add(petStore);
         address3.getPetStores().add(petStore);
 
-        // Réaliser une requête pour extraire tous les animaux d'une animalerie donnée
+        // Extraction de tous les animaux
         List<Animal> animals = em.createQuery("SELECT a FROM Animal a JOIN a.petStores ps WHERE ps.id = :petStoreId", Animal.class)
                 .setParameter("petStoreId", petStore.getId())
                 .getResultList();
@@ -136,7 +136,13 @@ public class Main {
 
         System.out.println("Animals in PetStore1:");
         for (Animal animal : animals) {
-            System.out.println(animal.getClass().getSimpleName() + ": " + animal.getId());
+            if (animal instanceof Fish) {
+                Fish fish = (Fish) animal;
+                System.out.println("Fish: " + fish.getId() + ", color: " + fish.getColor() + ", living environment: " + fish.getLivingEnv());
+            } else if (animal instanceof Cat) {
+                Cat cat = (Cat) animal;
+                System.out.println("Cat: " + cat.getId() + ", color: " + cat.getColor() + ", chip ID: " + cat.getChipId());
+            }
         }
 
         em.close();
