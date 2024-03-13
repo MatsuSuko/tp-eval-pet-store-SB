@@ -12,25 +12,23 @@ public class PetStore {
     private String name;
     private String managerName;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "petstore_product",
             joinColumns = @JoinColumn(name = "petstore_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products = new ArrayList<>();
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "petstore_animal",
             joinColumns = @JoinColumn(name = "petstore_id"),
             inverseJoinColumns = @JoinColumn(name = "animal_id"))
     private List<Animal> animals = new ArrayList<>();
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "petstore_address",
             joinColumns = @JoinColumn(name = "petstore_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id"))
     private List<Address> addresses = new ArrayList<>();
-
-    // Getters et setters
 
     public Long getId() {
         return id;

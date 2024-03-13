@@ -6,8 +6,6 @@ import jakarta.persistence.*;
 public class Cat extends Animal {
     private String chipId;
 
-    // Getters et setters
-
     public String getChipId() {
         return chipId;
     }

@@ -18,8 +18,6 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     private List<PetStore> petStores = new ArrayList<>();
 
-    // Getters et setters
-
     public Long getId() {
         return id;
     }

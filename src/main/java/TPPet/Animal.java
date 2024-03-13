@@ -1,6 +1,8 @@
 package TPPet;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +16,7 @@ public abstract class Animal {
     private String color;
 
     @ManyToMany(mappedBy = "animals")
-    private List<PetStore> petStores;
-
-    // Getters et setters
+    private List<PetStore> petStores = new ArrayList<>();
 
     public Long getId() {
         return id;

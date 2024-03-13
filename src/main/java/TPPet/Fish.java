@@ -7,8 +7,6 @@ public class Fish extends Animal {
     @Enumerated(EnumType.STRING)
     private FishLivEnv livingEnv;
 
-    // Getters et setters
-
     public FishLivEnv getLivingEnv() {
         return livingEnv;
     }

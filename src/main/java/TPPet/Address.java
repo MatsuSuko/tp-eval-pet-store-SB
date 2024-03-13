@@ -2,6 +2,7 @@ package TPPet;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,9 +16,7 @@ public class Address {
     private String city;
 
     @ManyToMany(mappedBy = "addresses")
-    private List<PetStore> petStores;
-
-    // Getters et setters
+    private List<PetStore> petStores = new ArrayList<>();
 
     public Long getId() {
         return id;
