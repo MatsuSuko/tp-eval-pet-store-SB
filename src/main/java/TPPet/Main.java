@@ -135,15 +135,18 @@ public class Main {
         em.getTransaction().commit();
 
         System.out.println("Animals in PetStore1:");
+        System.out.printf("%-10s %-10s %-10s %-20s %n", "ID", "Birth", "Color", "Type");
+        System.out.println("-----------------------------------------------------");
         for (Animal animal : animals) {
             if (animal instanceof Fish) {
                 Fish fish = (Fish) animal;
-                System.out.println("Fish: " + fish.getId() + ", color: " + fish.getColor() + ", living environment: " + fish.getLivingEnv());
+                System.out.printf("%-10d %-10s %-10s %-20s %n", fish.getId(), fish.getBirth(), fish.getColor(), fish.getLivingEnv());
             } else if (animal instanceof Cat) {
                 Cat cat = (Cat) animal;
-                System.out.println("Cat: " + cat.getId() + ", color: " + cat.getColor() + ", chip ID: " + cat.getChipId());
+                System.out.printf("%-10d %-10s %-10s %-20s %n", cat.getId(), cat.getBirth(), cat.getColor(), cat.getChipId());
             }
         }
+
 
         em.close();
         emf.close();
